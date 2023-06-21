@@ -10,6 +10,7 @@ import 'package:fbn_app/presentation/resources/app_strings.dart';
 import 'package:fbn_app/routes/app_pages.dart';
 import 'package:fbn_app/util/date_util.dart';
 import 'package:fbn_app/util/ext_fxns.dart';
+import 'package:fbn_app/util/util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,6 +32,7 @@ class HomePage extends StatelessWidget {
             children: [
               // mobile app bar
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     width: TAppSize.s32,
@@ -45,11 +47,13 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  50.pw,
                   Expanded(
                       child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Welcome Back, ${controller.customer.name}',
+                        '${timeGreeting()}, ${controller.customer.name}',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
@@ -64,6 +68,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   )),
+                  50.pw,
                   const Icon(CupertinoIcons.bell),
                 ],
               ),
